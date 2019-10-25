@@ -1,0 +1,108 @@
+<div class="container-contacto">
+  <mat-horizontal-stepper [linear]="isLinear" #stepper>
+    
+    <mat-step>
+      <form [formGroup]="formSend" (submit) = "sendComment($event)">
+        <mat-card>
+          <ng-template matStepLabel>Contáctame</ng-template>
+  
+          <div class="wrap-form">
+            <div class="wrap-info-form">
+              <h1>Ponte en contacto</h1>
+              <p>si me necesitas siempre puedes llamarme o completar el formulario debajo</p>
+            </div>
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Nombre</mat-label>
+              <input 
+                matInput 
+                placeholder="Ingresa tu nombre"
+                formControlName="nombre"
+              />
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <mat-hint *ngIf = "nameField.errors && nameField.dirty">
+                <span *ngIf = "nameField.hasError('required')">Nombre es un campo necesario</span>
+                <span *ngIf = "nameField.hasError('minlength')">Nombre debe ser mayor a 3 caracteres.</span>
+              </mat-hint>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Correo Electrónico</mat-label>
+              <input 
+                type="email"
+                matInput 
+                placeholder="Ingresa tu correo electrónico"
+                formControlName="email"
+              />
+              <mat-icon matSuffix>email</mat-icon>
+              <mat-hint *ngIf = "emailField.errors && emailField.dirty">
+                <span *ngIf = "emailField.hasError('required')">Correo electrónico es un campo necesario</span>
+                <span *ngIf = "emailField.hasError('email')">Correo electrónico incorrecto</span>
+              </mat-hint>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Comentario</mat-label>
+              <textarea matInput placeholder="Ingresa algún comentario" formControlName="comentario"></textarea>
+  
+              <mat-hint *ngIf = "commentField.errors && commentField.dirty">
+                <span *ngIf = "commentField.hasError('required')">Comentario es un campo necesario</span>
+                <span *ngIf = "commentField.hasError('minlength')">El comentario debe ser mayor a 10 caracteres</span>
+                <span *ngIf = "commentField.hasError('maxlength')">El comentario  debe ser menor a 100 caracteres</span>
+              </mat-hint>
+            </mat-form-field>
+  
+            <div class="button">
+              <button mat-raised-button color="primary" type="submit" [disabled] = "formSend.invalid">Comentar</button>
+            </div>
+  
+          </div>
+  
+          <div>
+            <button mat-button matStepperNext>Siguiente</button>
+          </div>
+        </mat-card> 
+      </form>
+    </mat-step>
+  
+    <mat-step>
+      <mat-card>
+        <ng-template matStepLabel>Información</ng-template>
+  
+        <div class="wrap-form">
+          
+          <div class="wrap-info-form">
+            <h1>Ponte en contacto</h1>
+            <p>si me necesitas siempre puedes llamarme o completar el formulario debajo.</p>
+          </div>
+  
+          <div class="wrap-data">
+            <h1>Christian Michelle Torres Martínez</h1>
+            <h3>Licenciatura Informática / Desarrollador Frontend</h3>
+            
+            <mat-card class="mat-p">
+              <p><img src="assets/images/icons/phone.png" alt="teléfono">449.111.73.91</p>
+              <p><img src="assets/images/icons/email.png" alt="email">christiantorres084@gmail.com</p>
+            </mat-card>
+  
+            <div class="rs">
+              <a href="https://www.linkedin.com/in/christian-torres-13454216a/" target="blank"><img src="assets/images/icons/linkedin.png" alt="linkedin"></a>
+              <a href="https://www.twitter.com" target="blank"><img src="assets/images/icons/twitter.png" alt="twitter"></a>
+            </div>
+          </div>
+  
+        </div>
+  
+        
+        <div>
+          <button mat-button matStepperPrevious>Anterior</button>
+        </div>
+      </mat-card>
+    </mat-step>
+  
+  </mat-horizontal-stepper>
+  
+  <a (click)="openBottomSheet()" class="btn-whatsapp">
+    <img src="./../../../../assets/images/icons/whatsapp.png" alt="wp" />
+  </a>
+</div>

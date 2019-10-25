@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-toolbar{
+  overflow: hidden;
+  z-index: 2 !important;
+}
+
+.sidenav{
+  width: 240px !important;
+  background: rgba(33, 33, 33, .8);
+  color: white;
+}
+
+.mat-list-base {
+  padding: 10px 20px;
+  display: grid !important;
+  grid-gap: 15px;
+}
+
+
+.mat-horizontal-stepper-header-container{
+  margin: 20px 25px ;
+}
+
+@media screen and (max-width: 768px){
+  .mat-horizontal-stepper-header-container {
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 599px){
+  .mat-horizontal-stepper-header-container {
+    margin: 5px 10px;
+  }
+
+  .mat-horizontal-content-container {
+    overflow: hidden;
+    padding: 0 10px 24px 10px;
+  }
+}
+

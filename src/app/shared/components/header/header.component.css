@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Montserrat:100,200,300,400,500,600|Varela+Round&display=swap&subset=latin-ext');
+
+.mat-tool{
+  background: #0277bd ;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.hidden{
+  display: none;
+}
+
+.spacer{
+  flex: 1 1 auto;
+}
+
+mat-toolbar a{
+  color: white;
+  text-decoration: none;
+  margin: 0 auto;
+}
+
+.options-menu a{
+  margin: 0 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 26px 15px;
+}
+
+.options-menu a.active,
+mat-nav-list a.active{
+  /* background: #5363bc; */
+  background: white;
+  color: #3f51b5;
+}
+
+.btn-cart{
+  color: #424242 !important;
+}
+
+.wrap-logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.wrap-logo img{
+  max-width: 45px;
+  margin-right: 10px;
+}
+
+.wrap-logo span{
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: larger;
+}
+
+mat-nav-list{
+  font-family: 'Montserrat', sans-serif !important;
+  text-transform: uppercase;
+  font-size: .8em;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 599px) {
+  .options-menu{
+    display: none;
+  }
+
+  mat-nav-list a.active{
+    /* background: #5363bc; */
+    background: white;
+    color: #3f51b5;
+    padding: 10px 5px;
+  }
+
+  .wrap-logo{
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  /* .material-icons {
+    font-size: 30px;
+  } */
+
+  .wrap-logo img {
+    max-width: 35px;
+    margin-right: 10px;
+  }
+
+  .logo-into {
+    height: 100px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-into img{
+    max-width: 90px;
+  }
+
+  .mat-nav-list a {
+    padding: 5px;
+    border-bottom: 1px solid grey;
+  }
+}

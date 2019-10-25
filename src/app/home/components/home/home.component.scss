@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600&display=swap');
+
+.home-container{
+  width: 100%;
+  height: 100vh;
+  background: 
+    linear-gradient(
+      rgba(2, 119, 189, .45),
+      rgba(2, 119, 189, .45)    ),
+    url('./../../../../assets/images/backgrounds/coding.jpg');
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-wrap{
+  color: white;
+  width: 60%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.home-wrap img{
+  max-width: 100px;
+  margin-left: 20px;
+}
+
+.home-wrap h1{
+  text-transform: uppercase;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding: 0 20px 20px 20px;
+  border-bottom: 1px solid;
+  font-weight: 200;
+}
+
+.home-wrap h3{
+  text-transform: uppercase;
+  padding: 0 0 0 20px;
+  font-weight: 400;
+}
+
+.buttons button{
+  margin: 0 10px;
+}
+
+.mat-contact {
+  background-color: #fdd835 ;
+  color: #fff;
+}
+
+@media screen and (max-width:768px) {
+  .home-wrap {
+    width: 90%;
+  }
+
+  .home-wrap img{
+    max-width: 120px;
+    margin: 10px auto;
+    display: inherit;
+  }
+
+  .buttons {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .home-wrap h1,
+  .home-wrap h3{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width:480px) {
+  .home-wrap {
+    width: 95%;
+  }
+
+  .home-wrap img{
+    max-width: 100px;
+    margin: 10px auto;
+    display: inherit;
+  }
+
+  .home-wrap h1{
+    padding: 0 5px 20px 5px;
+    font-size: 1.5em;
+  }
+
+  .buttons {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .home-wrap h3{
+    text-align: center;
+    font-size: 1em;
+  }
+}
