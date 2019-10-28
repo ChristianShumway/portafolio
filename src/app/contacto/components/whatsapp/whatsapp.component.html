@@ -1,0 +1,16 @@
+<form class="container" [formGroup]="myForm" (ngSubmit)="sendWhatssApp($event)">
+
+  <mat-form-field appearance="outline">
+    <mat-label>Mensaje</mat-label>
+    <textarea 
+      matInput 
+      placeholder="Ingresa tu mensaje" 
+      formControlName = "mensaje"
+    ></textarea>
+  </mat-form-field>
+
+  <div class="button">
+    <button mat-raised-button [color]="'whatssapp'" type="submit" [disabled] = "myForm.invalid">Enviar</button>
+  </div>
+
+</form>

@@ -1,0 +1,54 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav 
+      #drawer 
+      class="sidenav" 
+      [ngClass]="{hidden: !(isHandset$ | async)}"
+      fixedInViewport="false"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)"
+    >
+      <mat-toolbar  [color]="primary" class="logo-into">
+        <img src="assets/images/icons/code.png" alt="code"/>
+      </mat-toolbar>
+      <mat-nav-list >
+        <a (click)="drawer.toggle()" routerLink="/home" routerLinkActive="active">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+          Inicio
+        </a>
+        <a (click)="drawer.toggle()" routerLink="/proyectos" routerLinkActive="active">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">computer</mat-icon>
+          Proyectos
+        </a>
+        <a (click)="drawer.toggle()" routerLink="/contacto" routerLinkActive="active">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">message</mat-icon>
+          Contacto
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <div class="wrap-logo">
+          <img src="assets/images/icons/code.png" alt="logo" />
+          <!-- <span>Ch•on</!--> 
+        </div>
+        <span class="spacer"></span>
+        <div class="options-menu">
+          <a routerLink="/home" routerLinkActive="active">Home</a>
+          <a routerLink="/proyectos" routerLinkActive="active">Proyectos</a>
+          <a routerLink="/contacto" routerLinkActive="active">Contacto</a>
+        </div>
+      </mat-toolbar>
+      <!-- Add Content Here -->
+        <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

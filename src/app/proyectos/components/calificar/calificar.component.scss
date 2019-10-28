@@ -1,0 +1,90 @@
+.section-encuesta{
+
+}
+
+.form{
+  display: grid;
+  grid-gap: 14px;
+}
+
+.form label{
+  text-align: center;
+  text-transform: uppercase;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.group-options{
+  // border: 1px solid blue;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.group-options .option{
+  // border: 1px solid red;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.option mat-radio-button{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  width: 64px;
+  margin: 0 auto;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 9;
+}
+
+.mat-radio-label{
+  border: 1px solid !important;
+  width: 100%;
+  height: 100%;
+}
+
+.option img{
+  max-width: 60px;
+  filter: opacity(0.3);
+  cursor: pointer;
+}
+
+.option img.active{
+  filter: none;
+}
+
+.invalid-feedback{
+  text-align: center;
+  font-weight: 300;
+  font-size: 16px;
+  color: white;
+  background: #e53935;
+  border-radius: 6px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button{
+  text-align: center;
+}
+
+@media screen and (max-width:959px){
+  .section-encuesta{
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width:599px){
+  .section-encuesta{
+    width: 100%;
+  }
+}

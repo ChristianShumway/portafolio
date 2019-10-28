@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Montserrat:100,200,300,400,500,600|Varela+Round&display=swap&subset=latin-ext');
+
+.container-picture-banner{
+  height: 35vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap-picture{
+  width: 100%;
+  height: 100%;
+  background: url('./../../../../assets/images/backgrounds/laptop.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(0.5);
+  transition: 2s;
+  position: absolute;
+}
+
+
+.wrap-picture:hover{
+  transform: scale(1.1);
+}
+
+.container-picture-banner h1{
+  color: white;
+  z-index: 1;
+  font-family: 'Varela Round', sans-serif;
+  font-family: 'Julius Sans One', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 4em;
+  letter-spacing: 4px;
+}
+
+@media screen and (max-width: 768px){
+  .container-picture-banner{
+    height: 30vh;
+  }
+}
+
+@media screen and (max-width: 599px){
+  .container-picture-banner{
+    height: 25vh;
+  }
+
+  .container-picture-banner h1{
+    font-size: 2.5em;
+  }
+}
