@@ -32,7 +32,7 @@ import { LayoutComponent } from './layout/layout.component';
     AngularFireAuthModule,
     AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [CoreModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

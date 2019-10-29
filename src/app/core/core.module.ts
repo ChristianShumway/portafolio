@@ -4,7 +4,7 @@ import { MessagesService } from './services/messages/messages.service';
 
 @NgModule({
   declarations: [
-    MessagesService
+    
   ],
   imports: [
   CommonModule

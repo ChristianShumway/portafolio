@@ -5,11 +5,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 // import { MatIconModule } from '@angular/material/icon';
-import { MatListModule, MatIconModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatListModule, 
+         MatIconModule, 
+         MatFormFieldModule, 
+         MatInputModule, 
+         MatRadioModule 
+        } from '@angular/material';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatCardModule } from '@angular/material/card';
 import { MatStepperModule } from '@angular/material/stepper';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
 
 
 @NgModule({
@@ -26,7 +35,10 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    MatRadioModule,
+    MatTooltipModule,
+    MatSnackBarModule
   ],
   exports: [
     MatButtonModule,
@@ -39,7 +51,10 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    MatRadioModule,
+    MatTooltipModule,
+    MatSnackBarModule
   ]
 })
 

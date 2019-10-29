@@ -1,12 +1,12 @@
 <div class="container-contacto">
-  <mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-horizontal-stepper [linear]="isLinear" #stepper class="animated fadeIn">
     
     <mat-step>
-      <form [formGroup]="formSend" (submit) = "sendComment($event)">
+      <form [formGroup]="formSend" (submit) = "sendComment()">
         <mat-card>
           <ng-template matStepLabel>Contáctame</ng-template>
   
-          <div class="wrap-form">
+          <div class="wrap-form animated fadeIn">
             <div class="wrap-info-form">
               <h1>Ponte en contacto</h1>
               <p>si me necesitas siempre puedes llamarme o completar el formulario debajo</p>
@@ -20,7 +20,7 @@
                 formControlName="nombre"
               />
               <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-              <mat-hint *ngIf = "nameField.errors && nameField.dirty">
+              <mat-hint *ngIf = "nameField.errors && (nameField.dirty || nameField.touched)">
                 <span *ngIf = "nameField.hasError('required')">Nombre es un campo necesario</span>
                 <span *ngIf = "nameField.hasError('minlength')">Nombre debe ser mayor a 3 caracteres.</span>
               </mat-hint>
@@ -35,7 +35,7 @@
                 formControlName="email"
               />
               <mat-icon matSuffix>email</mat-icon>
-              <mat-hint *ngIf = "emailField.errors && emailField.dirty">
+              <mat-hint *ngIf = "emailField.errors && (emailField.dirty || emailField.touched)">
                 <span *ngIf = "emailField.hasError('required')">Correo electrónico es un campo necesario</span>
                 <span *ngIf = "emailField.hasError('email')">Correo electrónico incorrecto</span>
               </mat-hint>
@@ -45,7 +45,7 @@
               <mat-label>Comentario</mat-label>
               <textarea matInput placeholder="Ingresa algún comentario" formControlName="comentario"></textarea>
   
-              <mat-hint *ngIf = "commentField.errors && commentField.dirty">
+              <mat-hint *ngIf = "commentField.errors && (commentField.dirty || commentField.touched)">
                 <span *ngIf = "commentField.hasError('required')">Comentario es un campo necesario</span>
                 <span *ngIf = "commentField.hasError('minlength')">El comentario debe ser mayor a 10 caracteres</span>
                 <span *ngIf = "commentField.hasError('maxlength')">El comentario  debe ser menor a 100 caracteres</span>
@@ -86,8 +86,8 @@
             </mat-card>
   
             <div class="rs">
-              <a href="https://www.linkedin.com/in/christian-torres-13454216a/" target="blank"><img src="assets/images/icons/linkedin.png" alt="linkedin"></a>
-              <a href="https://www.twitter.com" target="blank"><img src="assets/images/icons/twitter.png" alt="twitter"></a>
+              <a href="https://www.linkedin.com/in/christian-torres-13454216a/"  matTooltip="Linkedin" target="blank"><img src="assets/images/icons/linkedin.png" alt="linkedin"></a>
+              <a href="https://twitter.com/123porshumway"  matTooltip="Twitter" target="blank"><img src="assets/images/icons/twitter.png" alt="twitter"></a>
             </div>
           </div>
   
@@ -102,7 +102,12 @@
   
   </mat-horizontal-stepper>
   
-  <a (click)="openBottomSheet()" class="btn-whatsapp">
-    <img src="./../../../../assets/images/icons/whatsapp.png" alt="wp" />
+  <a 
+    (click)="openBottomSheet()" 
+    class="btn-whatsapp animated pulse infinite slow"
+    matTooltip="Enviar Whatsapp"
+    aria-label="Button that displays a tooltip when focused or hovered over"
+  >
+    <img src="assets/images/icons/whatsapp.png" alt="wp" />
   </a>
 </div>

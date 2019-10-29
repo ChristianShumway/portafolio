@@ -75,50 +75,65 @@ mat-nav-list a.active{
 
 mat-nav-list{
   font-family: 'Montserrat', sans-serif !important;
-  text-transform: uppercase;
   font-size: .8em;
   font-weight: 400;
+  margin-top: 20px;
 }
+
+mat-nav-list a{
+  padding: 15px 20px;
+  width: 90%;
+  box-sizing: border-box;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+mat-nav-list a.active,
+mat-nav-list a:hover.active{
+  color: white;
+  background: #1976d2;
+}
+
+mat-nav-list a:hover{
+  color: white;
+  background: #232b3c;
+}
+
+mat-nav-list a mat-icon{
+  margin-right: 10px;
+}
+
+.logo-into {
+  height: 150px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #212939 !important;
+}
+
+.logo-into img{
+  max-width: 60px;
+  border-radius: 50%;
+  padding: 10px;
+  background: slategray
+}
+
 
 @media screen and (max-width: 599px) {
   .options-menu{
     display: none;
   }
 
-  mat-nav-list a.active{
-    /* background: #5363bc; */
-    background: white;
-    color: #3f51b5;
-    padding: 10px 5px;
-  }
-
+  
   .wrap-logo{
     justify-content: flex-end;
     width: 100%;
   }
-
-  /* .material-icons {
-    font-size: 30px;
-  } */
 
   .wrap-logo img {
     max-width: 35px;
     margin-right: 10px;
   }
 
-  .logo-into {
-    height: 100px !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .logo-into img{
-    max-width: 90px;
-  }
-
-  .mat-nav-list a {
-    padding: 5px;
-    border-bottom: 1px solid grey;
-  }
 }

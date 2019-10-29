@@ -1,0 +1,38 @@
+<section class="section-encuesta">
+  
+  <form [formGroup] = "formCalif" (submit) = "sendComment($event)" class="form">
+    
+    <label class="example-margin">¿Qué te parece este sitio?</label>
+    
+    <mat-radio-group formControlName="calificacion" class="group-options">
+      <div class="option">
+        <mat-radio-button class="example-margin" value="Mala" (click)="opcion = 'mala'" matTooltip="Mala"></mat-radio-button>
+        <img src="assets/images/icons/sad.png" alt="mala" [ngClass]="{'active':opcion === 'mala'}" />
+      </div>
+      <div class="option">
+        <mat-radio-button class="example-margin" value="Regular" (click)="opcion = 'regular'" matTooltip="Regular"></mat-radio-button>
+        <img src="assets/images/icons/sceptic.png" alt="normal" [ngClass]="{'active':opcion === 'regular'}" />
+      </div>
+      <div class="option">
+        <mat-radio-button class="example-margin" value="Interesante" (click)="opcion = 'interesante'" matTooltip="Interesante"></mat-radio-button>
+        <img src="assets/images/icons/happy.png" alt="happy" [ngClass]="{'active':opcion === 'interesante'}"
+        />
+      </div>
+    </mat-radio-group>
+
+    <mat-form-field class="comment-site">
+      <textarea matInput placeholder="Comentario" formControlName="comentario"></textarea>
+    </mat-form-field>
+
+    <div class="invalid-feedback" *ngIf="isSubmitted">
+      <p>Ayúdame con tu opinión</p>
+    </div>
+
+    <div class="button">
+      <button mat-raised-button color="primary" type="submit">Enviar</button>
+    </div>
+
+  </form>
+  
+</section>
+

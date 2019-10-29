@@ -1,8 +1,11 @@
 <div class="container-picture-banner">
   <div class="wrap-picture">
   </div>
-  <h1>PROYECTOS</h1>
+  <h1 class="buttons animated  fadeIn slower">PROYECTOS</h1>
 </div>
 
-<app-proyecto [proyectos] = "proyectos">
+<div *ngIf = "!proyectos">
+  <h1>Cargando</h1>
+</div>
+<app-proyecto *ngIf = "proyectos" [proyectos] = "proyectos">
 </app-proyecto>

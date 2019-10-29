@@ -8,13 +8,22 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)"
     >
-      <mat-toolbar  [color]="primary" class="logo-into">
+      <mat-toolbar  color="primary" class="logo-into">
         <img src="assets/images/icons/code.png" alt="code"/>
       </mat-toolbar>
       <mat-nav-list >
-        <a (click)="drawer.toggle()" routerLink="/home" routerLinkActive="active">Inicio</a>
-        <a (click)="drawer.toggle()" routerLink="/proyectos" routerLinkActive="active">Proyectos</a>
-        <a (click)="drawer.toggle()" routerLink="/contacto" routerLinkActive="active">Contacto</a>
+        <a (click)="drawer.toggle()" routerLink="/home" routerLinkActive="active">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+          Inicio
+        </a>
+        <a (click)="drawer.toggle()" routerLink="/proyectos" routerLinkActive="active">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">computer</mat-icon>
+          Proyectos
+        </a>
+        <a (click)="drawer.toggle()" routerLink="/contacto" routerLinkActive="active">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">message</mat-icon>
+          Contacto
+        </a>
       </mat-nav-list>
     </mat-sidenav>
   

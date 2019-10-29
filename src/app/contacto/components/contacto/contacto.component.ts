@@ -4,6 +4,7 @@ import { MessagesService } from './../../../core/services/messages/messages.serv
 import { Router } from '@angular/router';
 import {MatBottomSheet} from '@angular/material/bottom-sheet';
 import { WhatsappComponent } from './../whatsapp/whatsapp.component';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-contacto',
@@ -21,7 +22,8 @@ export class ContactoComponent implements OnInit {
     private formBuilder: FormBuilder,
     private messagesService: MessagesService,
     private router: Router,
-    private bottomSheet: MatBottomSheet
+    private bottomSheet: MatBottomSheet,
+    private snackBar: MatSnackBar
   ) {
     this.getValidations();
   }
@@ -57,17 +59,23 @@ export class ContactoComponent implements OnInit {
         ...this.formSend.value,
         fecha: Date.now()
       };
+      
      this.messagesService.addComment(msg)
-       .then(
-       success => {
-         console.log(success);
+      .then(
+      () => {
         this.formSend.reset();
-         this.active = false;
-       }
-     )
-     .catch(
-       error => console.log(error)
-     );
+        this.active = false;
+        this.noShowErrors();
+        this.snackBar.open('Mensaje enviado correctamente!!!', '', {
+          duration: 2000,
+          horizontalPosition: 'right',
+          verticalPosition: 'bottom',
+        });
+        
+      })
+      .catch(
+        error => console.log(error)
+      );
     }
   }
 
@@ -75,7 +83,11 @@ export class ContactoComponent implements OnInit {
     this.bottomSheet.open(WhatsappComponent);
   }
 
+  noShowErrors() {
+    for (let field in this.formSend.controls) {
+      this.formSend.controls[field].setErrors(null);
+    }
+  }
 
-  
 
 }
